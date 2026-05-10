@@ -1,0 +1,15 @@
+<html>
+	<head></head>
+	<body></body>
+	<script>
+		let ws;
+		const proto = window.location.protocol === 'https:' ? 'wss' : 'ws';
+		const host = window.location.host;
+		const url = `${proto}://${host}`;
+		ws = new WebSocket(url);
+
+		ws.onmessage = event => {
+			console.log('Received message:', event.data);
+		};
+	</script>
+</html>
